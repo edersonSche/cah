@@ -1,0 +1,47 @@
+const quotes = [
+  'Parabéns, [Nome]! Você venceu, mas não se preocupe, o Karma já está a caminho.',
+  'E o grande vencedor é... [Nome]! Agora só falta avisar sua mãe que ela falhou em te criar.',
+  '[Nome], você ganhou! Agora só resta descobrir o que deu errado na sua vida.',
+  'Aplausos para [Nome]! Você venceu, mas perdeu a dignidade no processo.',
+  'Parabéns, [Nome]! Você é oficialmente a pior pessoa que conhecemos.',
+  'E o troféu vai para... [Nome]! Nada como ser o melhor na arte de ser péssimo.',
+  '[Nome] é o campeão! Agora pode voltar para a sua vida medíocre.',
+  'E o prêmio de "Pessoa Mais Desagradável" vai para... [Nome]! Sua mãe deve estar orgulhosa.',
+  'Parabéns, [Nome]! Você venceu, mas não conte para ninguém, ok?',
+  'O vencedor é [Nome]! Você é oficialmente o melhor em ser o pior.',
+  'E o grande prêmio vai para [Nome]! Ser desprezível nunca pareceu tão recompensador.',
+  'Parabéns, [Nome]! Você ganhou, mas a vergonha é toda nossa.',
+  'Atenção, pessoal! [Nome] venceu! Agora podemos todos perder a fé na humanidade.',
+  'E o vencedor é... [Nome]! Provando que ser uma péssima pessoa realmente compensa.',
+  '[Nome] é o grande campeão! Hora de começar a terapia.',
+  'Parabéns, [Nome]! Você venceu, mas seus pais nunca precisarão saber.',
+  "E o troféu de 'Pior Ser Humano' vai para... [Nome]! Sua maldade foi reconhecida.",
+  'Aplausos para [Nome]! Você ganhou, mas deveria estar envergonhado.',
+  'O prêmio vai para [Nome]! Agora vá refletir sobre suas escolhas de vida.',
+  'E o vencedor é [Nome]! Finalmente, ser tóxico trouxe algum retorno.',
+  "E o troféu de 'Desgraça em Forma Humana' vai para... [Nome]! Seu psicólogo vai adorar essa novidade.",
+  'Atenção, [Nome] venceu! Porque ser um ser humano decente nunca foi sua prioridade.',
+  'Parabéns, [Nome]! Você ganhou, mas só porque o diabo ainda não apareceu para te buscar.',
+  'E o grande vencedor é... [Nome]! A personificação do motivo pelo qual extraterrestres não nos visitam.',
+  '[Nome] é o campeão! Provando que a ética é para os fracos.',
+  'Aplausos para [Nome]! Você venceu, mas qualquer esperança na humanidade foi derrotada.',
+  'E o prêmio vai para... [Nome]! A última pessoa que deveríamos deixar ganhar qualquer coisa.',
+  'Parabéns, [Nome]! Você venceu e agora somos todos cúmplices da sua vilania.',
+  '[Nome] é o vencedor! Agora todos sabemos quem está condenado no inferno.',
+  'Parabéns, [Nome]! Você venceu, provando que nem todo mundo nasce com uma consciência.',
+  'E o prêmio de "Má Influência do Ano" vai para... [Nome]! Sua falta de moral foi finalmente recompensada.',
+  '[Nome] é o vencedor! Porque, aparentemente, ser desprezível é a nova moda.',
+  'Atenção, [Nome] venceu! Parece que o universo decidiu dar uma folga para o bom senso hoje.',
+  'Parabéns, [Nome]! Você ganhou, e agora todos sabemos quem evitar na próxima reunião de família.',
+  'E o grande vencedor é... [Nome]! Se continuar assim, o inferno vai ganhar um novo residente VIP.',
+  '[Nome] é o campeão! Porque, no fim das contas, a falta de caráter realmente dá frutos.',
+  'Aplausos para [Nome]! Você venceu, mas o mundo ficou um pouco pior por isso.',
+  'O troféu vai para... [Nome]! Uma pessoa que faz o Grinch parecer um santo.',
+  'Parabéns, [Nome]! Você venceu, mas só porque a decência tirou o dia de folga.',
+];
+
+export function getEndGameQuote(winnerName: string) {
+  const index = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[index];
+  return quote.replace('[Nome]', winnerName.toUpperCase());
+}
