@@ -1,5 +1,5 @@
+import { useGame } from '@hooks/useGame';
 import { io } from 'socket.io-client';
-import { useGame } from '../hooks/useGame';
 
 const socket = io(import.meta.env.VITE_SOCKET_URL, { autoConnect: false, });
 

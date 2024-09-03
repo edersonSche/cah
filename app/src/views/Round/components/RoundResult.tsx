@@ -1,6 +1,8 @@
+import { Button } from "@components/Button";
+import { useGame } from "@hooks/useGame";
+import { revealCard, sendRoundWinner } from "@services/socket.service";
 import { useState } from "react";
-import { useGame } from "../../../hooks/useGame"
-import { revealCard, sendRoundWinner } from "../../../services/socket.service";
+
 
 export function RoundResult() {
     const { round, isMyPlayerCzar, isAllRoundWhiteCardsRevealed } = useGame();
@@ -40,16 +42,12 @@ export function RoundResult() {
                         ))}
                     </div>
                     {isMyPlayerCzar() &&
-                        <button
-                            className={
-                                isAllRoundWhiteCardsRevealed() && cardSelected ?
-                                    "bg-yellow-400 font-bold text-zinc-800 py-2 rounded border-2 border-yellow-700 cursor-pointer"
-                                    : "bg-zinc-400 font-bold text-zinc-600 italic py-2 rounded border-2 border-zinc-700 cursor-not-allowed"}
+                        <Button 
                             onClick={() => sendRoundWinner(cardSelected)}
                             disabled={!isAllRoundWhiteCardsRevealed() || !cardSelected}
                         >
                             Send
-                        </button>
+                        </Button>
                     }
                     {!isMyPlayerCzar() &&
                         <div className='italic text-center text-xl py-2 rounded animate-pulse'>

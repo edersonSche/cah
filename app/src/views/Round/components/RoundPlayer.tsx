@@ -1,6 +1,7 @@
+import { Button } from "@components/Button";
+import { useGame } from "@hooks/useGame";
+import { sendWhiteCards } from "@services/socket.service";
 import { useMemo, useState } from "react";
-import { useGame } from "../../../hooks/useGame"
-import { sendWhiteCards } from "../../../services/socket.service";
 
 export function RoundPlayer() {
     const { round, whiteCards } = useGame();
@@ -46,16 +47,7 @@ export function RoundPlayer() {
                 ))}
             </div>
 
-            <button
-                className={
-                    canSend ?
-                        "bg-yellow-400 font-bold text-zinc-800 py-2 rounded border-2 border-yellow-700"
-                        : "bg-zinc-400 font-bold text-zinc-600 italic py-2 rounded border-2 border-zinc-700 cursor-not-allowed"}
-                onClick={send}
-                disabled={!canSend}
-            >
-                Send
-            </button>
+            <Button onClick={send} disabled={!canSend}>Send</Button>
         </div>
     )
 }

@@ -1,9 +1,10 @@
-import { useGame } from "../../hooks/useGame"
 import { RoundCzar } from "./components/RoundCzar";
 import { RoundPlayer } from "./components/RoundPlayer";
 import { LeaderBoard } from "./components/LeaderBoard";
-import { useLeaderboard } from "./hooks/useLeaderboard";
 import { RoundResult } from "./components/RoundResult";
+import { Button } from "@components/Button";
+import { useGame } from "@hooks/useGame";
+import { useLeaderboard } from "./hooks/useLeaderboard";
 
 export function Round() {
     const { stage, getCzar, round } = useGame();
@@ -26,11 +27,7 @@ export function Round() {
         <>
             <div className="h-full flex flex-col gap-4">
                 <div className="flex justify-between items-center">
-                    <button className="bg-zinc-800 font-bold text-white py-2 px-3 text-sm rounded border-2 border-white"
-                        onClick={showLeaderboard}
-                    >
-                        🏆 Leaderboard
-                    </button>
+                    <Button variant="secondary" size="sm" onClick={showLeaderboard}>🏆 Leaderboard</Button>
                     <div className="flex gap-2  items-center text-yellow-400 font-bold">
                         <span>{czar?.name}</span>
                         <span>👑</span>

@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+
+const { withTV } = require('tailwind-variants/transformer');
+
+export default withTV({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-],
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+})
 

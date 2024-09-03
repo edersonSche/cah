@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useGame } from "../hooks/useGame";
-import { joinGame } from "../services/socket.service";
+import { Button } from "@components/Button";
+import { useGame } from "@hooks/useGame";
+import { joinGame } from "@services/socket.service";
+
 
 export function Start() {
     const setStage = useGame((state) => state.setStage);
@@ -38,12 +40,8 @@ export function Start() {
                     placeholder="Enter your name"
                     value={name}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)} />
-                <button
-                    className="bg-yellow-400 font-bold text-zinc-800 py-2 rounded border-2 border-ins border-yellow-700"
-                    type="submit"
-                >
-                    Join
-                </button>
+                
+                <Button type="submit" >Join</Button>
             </form>
         </>
     )

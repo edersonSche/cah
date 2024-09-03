@@ -1,5 +1,7 @@
-import { useGame } from "../../../hooks/useGame";
-import { useLeaderboard } from "../hooks/useLeaderboard"
+import { useGame } from "@hooks/useGame";
+import { useLeaderboard } from "../hooks/useLeaderboard";
+import { Button } from "@components/Button";
+
 
 export function LeaderBoard() {
     const { closeLeaderboard } = useLeaderboard();
@@ -29,12 +31,8 @@ export function LeaderBoard() {
                         </ul>
                     </div>
                     <hr className="h-0.5 bg-gray-200" />
-                    <button
-                        className="bg-zinc-800 font-bold text-white py-2 rounded border-2 border-white"
-                        onClick={closeLeaderboard}
-                    >
-                        Exit
-                    </button>
+                    
+                    <Button variant="secondary" onClick={closeLeaderboard}>Exit</Button>
                 </div>
             </div>
             <div className="opacity-60 fixed inset-0 z-40 bg-black " />

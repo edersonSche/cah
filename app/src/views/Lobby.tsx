@@ -1,6 +1,8 @@
 import { useMemo } from "react";
-import { useGame } from "../hooks/useGame";
-import { exitGame, startGame } from "../services/socket.service";
+import { Button } from "@components/Button";
+import { useGame } from "@hooks/useGame";
+import { exitGame, startGame } from "@services/socket.service";
+
 
 export function Lobby() {
     const game = useGame();
@@ -25,22 +27,9 @@ export function Lobby() {
             <div className="text-sm text-right -mt-5 font-extrabold">{countPlayer} players</div>
 
             <div className="flex flex-col gap-2">
-                <button
-                    className={
-                        enabledStart ?
-                            "bg-yellow-400 font-bold text-zinc-800 py-2 rounded border-2 border-yellow-700"
-                            : "bg-zinc-400 font-bold text-zinc-600 italic py-2 rounded border-2 border-zinc-700 cursor-not-allowed"}
-                    onClick={startGame}
-                    disabled={!enabledStart}
-                >
-                    Start
-                </button>
-                <button
-                    className="bg-zinc-800 font-bold text-white py-2 rounded border-2 border-white"
-                    onClick={exitGame}
-                >
-                    Exit
-                </button>
+                <Button disabled={!enabledStart} onClick={startGame}>Start</Button>
+                <Button variant="secondary" onClick={exitGame}>Exit</Button>
+                
             </div>
         </div>
     )

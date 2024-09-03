@@ -1,8 +1,8 @@
-import { useGame } from "./hooks/useGame"
-import { Round } from "./views/Round";
-import { Lobby } from "./views/Lobby";
-import { Start } from "./views/Start";
-import { EndGame } from "./views/EndGame";
+import { useGame } from "@hooks/useGame";
+import { Start } from "@views/Start";
+import { Lobby } from "@views/Lobby";
+import { Round } from "@views/Round";
+import { EndGame } from "@views/EndGame";
 
 export default function App() {
   const stage = useGame((store) => store.stage);
